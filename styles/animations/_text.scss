@@ -1,0 +1,35 @@
+.slide {
+  // width: 100%;
+  // transform: translateX(-5%);
+}
+
+.slide-in {
+  animation: slide-to-right 1s ease-in;
+}
+
+.slide-down {
+  opacity: 0;
+  animation: slide-to-down 1s forwards ease-in 1s;
+}
+
+@keyframes slide-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-to-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

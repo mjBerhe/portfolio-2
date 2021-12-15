@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+@import "components/background";
+@import "animations/text";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.page-container {
+  min-height: 100vh;
+  // background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(
+    ellipse at bottom,
+    rgb(57, 18, 66) 0%,
+    #090a0f 100%
+  );
+  overflow: hidden;
+}
