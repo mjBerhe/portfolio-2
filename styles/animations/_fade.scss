@@ -1,0 +1,49 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.fade-in-1 {
+  opacity: 0;
+  animation: slide-to-right 0.25s forwards 1.5s ease-in;
+}
+
+.fade-in-2 {
+  opacity: 0;
+  animation: slide-to-right 0.25s forwards 1.75s ease-in;
+}
+
+.fade-in-3 {
+  opacity: 0;
+  animation: slide-to-right 0.25s forwards 2s ease-in;
+}
+
+.fade-in-4 {
+  opacity: 0;
+  animation: slide-to-right 0.25s forwards 2.25s ease-in;
+}
+
+.fade-in-5 {
+  opacity: 0;
+  animation: slide-to-right 0.25s forwards 2.5s ease-in;
+}
+
+.fade-in-6 {
+  opacity: 0;
+  animation: slide-to-right 0.25s forwards 2.75s ease-in;
+}
