@@ -3,13 +3,7 @@ import { useInView } from "react-intersection-observer";
 
 const About = () => {
   const aboutRef = useRef(null);
-  const {
-    ref: aboutInfoRef,
-    inView,
-    entry,
-  } = useInView({
-    threshold: 0,
-  });
+  const [aboutInfoRef, inView, entry] = useInView({ threshold: 0 });
 
   return (
     <div ref={aboutRef} className="flex min-h-screen">

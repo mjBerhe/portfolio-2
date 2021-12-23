@@ -9,11 +9,13 @@ import Head from "next/head";
 import Image from "next/image";
 import About from "../components/About";
 import Works from "../components/Works";
+import Contact from "../components/Contact";
 
 const Home: NextPage = () => {
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const worksRef = useRef(null);
+  const contactRef = useRef(null);
 
   const scrollToRef = (ref: any) => {
     ref?.current?.scrollIntoView({ block: "start", behavior: "smooth" });
@@ -30,7 +32,7 @@ const Home: NextPage = () => {
           <ul className="flex justify-around mx-48 mt-4 text-3xl font-bold tracking-tight">
             <li>
               <button
-                className=" text-3xl font-bold tracking-tight"
+                className="text-3xl font-bold tracking-tight"
                 onClick={() => scrollToRef(aboutRef)}
               >
                 ABOUT
@@ -38,7 +40,7 @@ const Home: NextPage = () => {
             </li>
             <li>
               <button
-                className=" text-3xl font-bold tracking-tight"
+                className="text-3xl font-bold tracking-tight"
                 onClick={() => scrollToRef(skillsRef)}
               >
                 SKILLS
@@ -46,13 +48,20 @@ const Home: NextPage = () => {
             </li>
             <li>
               <button
-                className=" text-3xl font-bold tracking-tight"
+                className="text-3xl font-bold tracking-tight"
                 onClick={() => scrollToRef(worksRef)}
               >
                 WORKS
               </button>
             </li>
-            <li>CONTACT</li>
+            <li>
+              <button
+                className="text-3xl font-bold tracking-tight"
+                onClick={() => scrollToRef(contactRef)}
+              >
+                CONTACT
+              </button>
+            </li>
           </ul>
 
           <div className="flex flex-1 flex-col items-start justify-center">
@@ -73,6 +82,10 @@ const Home: NextPage = () => {
 
         <div ref={worksRef}>
           <Works />
+        </div>
+
+        <div ref={contactRef}>
+          <Contact />
         </div>
       </div>
     </div>

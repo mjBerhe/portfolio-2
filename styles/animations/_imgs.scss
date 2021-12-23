@@ -61,3 +61,33 @@
     transition: all 50ms ease-in;
   }
 }
+
+.works-fade-in-delay {
+  opacity: 0;
+  animation: img-fade-in 1.5s forwards 1s ease-in;
+}
+
+.works-slide-delay {
+  opacity: 0;
+  animation: slide-to-right 1s forwards 2s ease-in;
+}
+
+@keyframes img-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}

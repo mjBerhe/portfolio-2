@@ -84,13 +84,54 @@ const worksList = [
 ];
 
 const Works = () => {
-  const {
-    ref: worksInfoRef,
-    inView: worksInfoInView,
-    entry: worksInfoEntry,
-  } = useInView({
+  const [worksInfoRef, worksInfoInView, worksInfoEntry] = useInView({
     threshold: 0,
   });
+
+  const [works0Ref, works0InView, works0Entry] = useInView({ threshold: 0.8 });
+  const [works1Ref, works1InView, works1Entry] = useInView({ threshold: 0.8 });
+  const [works2Ref, works2InView, works2Entry] = useInView({ threshold: 0.8 });
+
+  const [works0BeenShown, setWorks0BeenShown] = useState(false);
+  const [works1BeenShown, setWorks1BeenShown] = useState(false);
+  const [works2BeenShown, setWorks2BeenShown] = useState(false);
+  const worksBeenShown = [works0BeenShown, works1BeenShown, works2BeenShown];
+
+  useEffect(() => {
+    if (works0InView && !works0BeenShown) {
+      setWorks0BeenShown(true);
+    }
+    if (works1InView && !works1BeenShown) {
+      setWorks1BeenShown(true);
+    }
+    if (works2InView && !works2BeenShown) {
+      setWorks2BeenShown(true);
+    }
+  }, [works0InView, works1InView, works2InView]);
+
+  const findRef = (index: Number) => {
+    if (index === 0) {
+      return works0Ref;
+    }
+    if (index === 1) {
+      return works1Ref;
+    }
+    if (index === 2) {
+      return works2Ref;
+    }
+  };
+
+  const findInView = (index: Number) => {
+    if (index === 0) {
+      return works0InView;
+    }
+    if (index === 1) {
+      return works1InView;
+    }
+    if (index === 2) {
+      return works2InView;
+    }
+  };
 
   return (
     <div className="flex min-h-screen">
@@ -104,24 +145,20 @@ const Works = () => {
           className="flex flex-col max-w-5xl mx-auto w-full"
           ref={worksInfoRef}
         >
-          <div
-            className={`flex flex-col mt-8 ${
-              worksInfoInView ? "block" : "hidden"
-            }`}
-          >
-            {/* <div className="border-tl-right"></div>
-            <div className="border-tl-down"></div>
-            <div className="border-br-up"></div>
-            <div className="border-br-left"></div> */}
+          <div className="flex flex-col mt-8">
             <div className="w-full">
               <div className="flex flex-col space-y-36">
                 {worksList.map((work, i) => (
-                  <div key={work.name} className="flex flex-col relative p-8">
+                  <div
+                    key={work.name}
+                    ref={findRef(i)}
+                    className="flex flex-col relative p-8"
+                  >
                     <div
+                      key={work.name}
                       className={`flex ${
                         (i + 1) % 2 === 0 ? "flex-row-reverse" : "flex-row"
-                      }`}
-                      key={work.name}
+                      } ${!worksBeenShown[i] && "hidden"}`}
                     >
                       <div className="border-tl-right"></div>
                       <div className="border-tl-down"></div>
@@ -129,10 +166,10 @@ const Works = () => {
                       <div className="border-br-left"></div>
                       <img
                         src={work.websiteImg}
-                        alt=""
-                        className="rounded-xl shadow max-w-xl"
+                        alt={`${work.name} screenshot`}
+                        className="rounded-xl shadow max-w-xl works-fade-in-delay"
                       />
-                      <div className="flex grow flex-col p-4">
+                      <div className="flex grow flex-col p-4 works-slide-delay">
                         <p
                           className={` text-3xl font-bold ${
                             (i + 1) % 2 === 0 ? "text-right" : "text-left"
