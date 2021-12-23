@@ -2,6 +2,11 @@
   animation: slide-to-right 1s ease-in;
 }
 
+.slide-in-delay {
+  opacity: 0;
+  animation: slide-to-right 1s forwards ease-in 1s;
+}
+
 .slide-down {
   opacity: 0;
   animation: slide-to-down 1s forwards ease-in 1s;
@@ -10,6 +15,11 @@
 .fade-in {
   opacity: 0;
   animation: fade-in 2s forwards ease-in;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fade-in 2s forwards 1s ease-in;
 }
 
 .fade-out {
@@ -24,6 +34,16 @@
   left: 0;
   background-color: white;
   animation: line-slide 0.5s ease-in 1s 1 forwards;
+}
+
+.text-overline {
+  content: "";
+  position: absolute;
+  height: 4px;
+  top: 5px;
+  left: 0;
+  background-color: white;
+  animation: line-slide 0.5s ease-in 0s 1 forwards;
 }
 
 @keyframes line-slide {
@@ -72,15 +92,5 @@
   }
   100% {
     opacity: 0;
-  }
-}
-
-@keyframes hello {
-  0% {
-    text-decoration: none;
-  }
-  100% {
-    text-decoration: underline 0.15em white;
-    // transition: text-decoration-color 300ms;
   }
 }
