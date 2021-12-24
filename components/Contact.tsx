@@ -25,6 +25,14 @@ const Contact = () => {
     }));
   };
 
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const messageValue = e.currentTarget.value;
+    setForm((prev) => ({
+      ...prev,
+      message: messageValue,
+    }));
+  };
+
   const sendEmail = async (e: any) => {
     e.preventDefault();
     console.log(form);
@@ -89,11 +97,10 @@ const Contact = () => {
                 className="form-input col-span-2"
               />
               <textarea
-                type="text"
                 name="message"
                 placeholder="Message"
                 value={form.message}
-                onChange={handleFormChange}
+                onChange={handleMessageChange}
                 className="form-textarea col-span-2 row-span-3 self-start"
               />
               <button type="submit" className="col-span-2">
