@@ -28,9 +28,9 @@ const About = () => {
             <div className="border-br-left"></div>
             <div className="flex flex-col space-y-8 fade-in-delay">
               <p className="text-3xl font-medium">
-                Hey! I'm Matthew, a self-taught developer based in Toronto. I
-                enjoy building websites that are easy to use yet provide a large
-                impact.
+                Hey! I&apos;m Matthew, a self-taught developer based in Toronto.
+                I enjoy building websites that are easy to use yet provide a
+                large impact.
               </p>
               <p className="text-3xl font-medium">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.

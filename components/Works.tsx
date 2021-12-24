@@ -109,7 +109,7 @@ const Works = () => {
     }
   }, [works0InView, works1InView, works2InView]);
 
-  const findRef = (index: Number) => {
+  const findRef = (index: number) => {
     if (index === 0) {
       return works0Ref;
     }
@@ -121,7 +121,7 @@ const Works = () => {
     }
   };
 
-  const findInView = (index: Number) => {
+  const findInView = (index: number) => {
     if (index === 0) {
       return works0InView;
     }

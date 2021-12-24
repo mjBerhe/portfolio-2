@@ -205,6 +205,7 @@ const Skills = () => {
                       <a
                         href={pic.href}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="tech-item-overlay"
                       >
                         <img src={`/logos/${pic.colorImgSrc}`} alt="" />
@@ -233,6 +234,7 @@ const Skills = () => {
                       <a
                         href={pic.href}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="tech-item-overlay"
                       >
                         <img src={`/logos/${pic.colorImgSrc}`} alt="" />
@@ -261,6 +263,7 @@ const Skills = () => {
                       <a
                         href={pic.href}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="tech-item-overlay"
                       >
                         <img src={`/logos/${pic.colorImgSrc}`} alt="" />
