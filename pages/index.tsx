@@ -4,7 +4,6 @@ import { useInView } from "react-intersection-observer";
 
 import Skills from "../components/Skills";
 
-import PageLayout from "../layouts/PageLayout";
 import Head from "next/head";
 import Image from "next/image";
 import About from "../components/About";
