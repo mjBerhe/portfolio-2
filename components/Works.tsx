@@ -88,9 +88,9 @@ const Works = () => {
     threshold: 0,
   });
 
-  const [works0Ref, works0InView, works0Entry] = useInView({ threshold: 0.8 });
-  const [works1Ref, works1InView, works1Entry] = useInView({ threshold: 0.8 });
-  const [works2Ref, works2InView, works2Entry] = useInView({ threshold: 0.8 });
+  const [works0Ref, works0InView, works0Entry] = useInView({ threshold: 1 });
+  const [works1Ref, works1InView, works1Entry] = useInView({ threshold: 1 });
+  const [works2Ref, works2InView, works2Entry] = useInView({ threshold: 1 });
 
   const [works0BeenShown, setWorks0BeenShown] = useState(false);
   const [works1BeenShown, setWorks1BeenShown] = useState(false);
@@ -171,7 +171,7 @@ const Works = () => {
                       />
                       <div className="flex grow flex-col p-4 works-slide-delay">
                         <p
-                          className={` text-3xl font-bold ${
+                          className={`text-3xl font-bold ${
                             (i + 1) % 2 === 0 ? "text-right" : "text-left"
                           }`}
                         >
@@ -199,22 +199,21 @@ const Works = () => {
                           ))}
                         </div>
                         <span
-                          className={` text-xl mt-4 ${
+                          className={`text-xl mt-4 ${
                             (i + 1) % 2 === 0 ? "text-right" : "text-left"
                           }`}
                         >
                           {work.description}
                         </span>
-                        <div className="flex justify-end mt-4">
+                        <div
+                          className={`flex mt-4 ${
+                            (i + 1) % 2 === 0 ? "justify-end" : "justify-start"
+                          }`}
+                        >
                           <button className="button">Visit</button>
                         </div>
                       </div>
                     </div>
-                    {/* {i + 1 !== worksList.length && (
-                      <div className="flex justify-center  mt-12">
-                        ----------------
-                      </div>
-                    )} */}
                   </div>
                 ))}
               </div>

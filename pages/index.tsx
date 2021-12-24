@@ -9,6 +9,7 @@ import Image from "next/image";
 import About from "../components/About";
 import Works from "../components/Works";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   const aboutRef = useRef(null);
@@ -87,6 +88,8 @@ const Home: NextPage = () => {
           <Contact />
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
