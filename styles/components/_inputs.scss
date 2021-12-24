@@ -1,4 +1,23 @@
 .form-input {
   background-color: transparent;
   border: 1px solid white;
+  border-radius: 8px;
+  height: 3rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+
+  &:focus {
+    outline: none;
+    border: 2px solid white;
+  }
+}
+
+.form-textarea {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 8px;
+  height: 100%;
+  padding: 1rem;
+  resize: none;
+  font-size: 1.25rem;
 }

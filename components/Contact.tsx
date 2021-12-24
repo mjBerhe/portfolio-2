@@ -29,13 +29,13 @@ const Contact = () => {
     e.preventDefault();
     console.log(form);
 
-    const result = await emailjs.sendForm(
-      "service_3cdiee4",
-      "template_57c2yfl",
-      e.target,
-      "user_HeqlqbuQa4Ip0GvzY2pRO"
-    );
-    console.log(result);
+    // const result = await emailjs.sendForm(
+    //   "service_3cdiee4",
+    //   "template_57c2yfl",
+    //   e.target,
+    //   "user_HeqlqbuQa4Ip0GvzY2pRO"
+    // );
+    // console.log(result);
   };
 
   return (
@@ -62,7 +62,7 @@ const Contact = () => {
             <form
               onSubmit={sendEmail}
               autoComplete="off"
-              className="flex flex-col space-y-2"
+              className="grid grid-rows-5 grid-cols-2 gap-4"
             >
               <input
                 type="text"
@@ -70,7 +70,7 @@ const Contact = () => {
                 placeholder="Name"
                 value={form.name}
                 onChange={handleFormChange}
-                className="form-input"
+                className="form-input col-span-1"
               />
               <input
                 type="text"
@@ -78,7 +78,7 @@ const Contact = () => {
                 placeholder="Email"
                 value={form.email}
                 onChange={handleFormChange}
-                className="form-input"
+                className="form-input col-span-1"
               />
               <input
                 type="text"
@@ -86,17 +86,19 @@ const Contact = () => {
                 placeholder="Subject"
                 value={form.subject}
                 onChange={handleFormChange}
-                className="form-input"
+                className="form-input col-span-2"
               />
-              <input
+              <textarea
                 type="text"
                 name="message"
                 placeholder="Message"
                 value={form.message}
                 onChange={handleFormChange}
-                className="form-input"
+                className="form-textarea col-span-2 row-span-3 self-start"
               />
-              <button type="submit">Submit</button>
+              <button type="submit" className="col-span-2">
+                Send
+              </button>
             </form>
           </div>
         </div>
