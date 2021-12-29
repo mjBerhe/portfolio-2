@@ -1,9 +1,16 @@
-import { useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 const About = () => {
   const aboutRef = useRef(null);
   const [aboutInfoRef, inView, entry] = useInView({ threshold: 0 });
+  const [aboutBeenShown, setAboutBeenShown] = useState(false);
+
+  useEffect(() => {
+    if (inView && !aboutBeenShown) {
+      setAboutBeenShown(true);
+    }
+  }, [inView]);
 
   return (
     <div ref={aboutRef} className="flex min-h-screen">
@@ -19,7 +26,7 @@ const About = () => {
         >
           <div
             className={`flex flex-col relative mt-8 p-8 ${
-              inView ? "block " : "hidden"
+              !aboutBeenShown && "hidden"
             }`}
           >
             <div className="border-tl-right"></div>

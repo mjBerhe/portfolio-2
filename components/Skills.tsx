@@ -101,21 +101,17 @@ const otherTechPics = [
 ];
 
 const Skills = () => {
-  const {
-    ref: skillsRef,
-    inView: skillsInView,
-    entry: skillsEntry,
-  } = useInView({
-    threshold: 0,
+  const [skillsRef, skillsInView, skillsEntry] = useInView({ threshold: 1 });
+  const [skillsInfoRef, skillsInfoInView, skillsInfoEntry] = useInView({
+    threshold: 0.8,
   });
+  const [skillsInfoBeenSeen, setSkillsInfoBeenSeen] = useState(false);
 
-  const {
-    ref: skillsInfoRef,
-    inView: skillsInfoInView,
-    entry: skillsInfoEntry,
-  } = useInView({
-    threshold: 0,
-  });
+  useEffect(() => {
+    if (skillsInfoInView && !skillsInfoBeenSeen) {
+      setSkillsInfoBeenSeen(true);
+    }
+  }, [skillsInfoInView]);
 
   const [swappingGroups, setSwappingGroups] = useState(false);
   const [selectedGroup, setSelectedGroup] = useState("front");
@@ -148,7 +144,7 @@ const Skills = () => {
         >
           <div
             className={`flex flex-col relative mt-8 p-8 ${
-              skillsInfoInView ? "block" : "hidden"
+              !skillsInfoBeenSeen && "hidden"
             }`}
           >
             <div className="border-tl-right"></div>
@@ -156,8 +152,8 @@ const Skills = () => {
             <div className="border-br-up"></div>
             <div className="border-br-left"></div>
             <div
-              className={`flex justify-start space-x mb-12 ${
-                skillsInfoInView ? "slide-down" : "hidden"
+              className={`flex justify-start space-x mb-12 slide-down ${
+                !skillsInfoBeenSeen && "hidden"
               }`}
             >
               <button

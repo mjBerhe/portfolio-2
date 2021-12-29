@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 import emailjs from "emailjs-com";
@@ -33,7 +33,7 @@ const Contact = () => {
     }));
   };
 
-  const sendEmail = async (e: any) => {
+  const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(form);
 

@@ -7,7 +7,7 @@ const worksList = [
     type: "Full-Stack Developer",
     websiteImg: "screenshots/renotag.png",
     description:
-      "Home renovation tool to estimate your projects in minutes. Connecting home owners to local home pros.",
+      "Home renovation tool to estimate your project costs in minutes. Connecting home owners to local home pros.",
     technologies: [
       {
         name: "React",
@@ -134,7 +134,7 @@ const Works = () => {
   };
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-full">
       <div className="flex flex-col flex-1 space-y-6">
         <div className="self-start relative mt-24 mx-12">
           <div className="text-overline"></div>
