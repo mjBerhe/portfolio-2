@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const worksList = [
   {
     name: "Renotag",
     type: "Full-Stack Developer",
     websiteImg: "screenshots/renotag.png",
+    href: "https://www.renotag.com/",
     description:
       "Home renovation tool to estimate your project costs in minutes. Connecting home owners to local home pros.",
     technologies: [
@@ -39,6 +41,7 @@ const worksList = [
     name: "DPS Calculator",
     type: "Personal Project",
     websiteImg: "screenshots/osrsdps.png",
+    href: "https://osrsdps.com/",
     description:
       "User friendly visual tool to help compare in-game scenarios to optimize performance. Built for Oldschool Runescape.",
     technologies: [
@@ -64,6 +67,7 @@ const worksList = [
     name: "2Slow",
     type: "Personal Project",
     websiteImg: "screenshots/tooslow.png",
+    href: "https://tooslow.herokuapp.com/",
     description:
       "Fast-paced competitive math game where speed and accuracy decide the victor.",
     technologies: [
@@ -210,7 +214,14 @@ const Works = () => {
                             (i + 1) % 2 === 0 ? "justify-end" : "justify-start"
                           }`}
                         >
-                          <button className="button">Visit</button>
+                          <a
+                            target="_blank"
+                            href={work.href}
+                            rel="noopener noreferrer"
+                            className="button type1"
+                          >
+                            Visit
+                          </a>
                         </div>
                       </div>
                     </div>

@@ -103,7 +103,7 @@ const Contact = () => {
                 onChange={handleMessageChange}
                 className="form-textarea col-span-2 row-span-3 self-start"
               />
-              <button type="submit" className="col-span-2">
+              <button type="submit" className="col-span-2 button type1">
                 Send
               </button>
             </form>
