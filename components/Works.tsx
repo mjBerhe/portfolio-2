@@ -220,7 +220,7 @@ const Works = () => {
                             rel="noopener noreferrer"
                             className="button type1"
                           >
-                            Visit
+                            VISIT
                           </a>
                         </div>
                       </div>

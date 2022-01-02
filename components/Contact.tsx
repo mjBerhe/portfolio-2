@@ -3,11 +3,36 @@ import { useInView } from "react-intersection-observer";
 
 import emailjs from "emailjs-com";
 
+const profileLinks = [
+  {
+    name: "Resume",
+    imgSrc: "/logos/Resume_W.png",
+    href: "Resume 2021 v2.pdf",
+  },
+  {
+    name: "Github",
+    imgSrc: "/logos/Github_Logo_W.png",
+    href: "https://github.com/mjBerhe",
+  },
+  {
+    name: "Linkedin",
+    imgSrc: "/logos/Linkedin_Logo_W.png",
+    href: "https://www.linkedin.com/in/matthew-berhe-a632b017a/?originalSubdomain=ca",
+  },
+];
+
 const Contact = () => {
   const contactRef = useRef(null);
   const [contactInfoRef, contactInfoInView, contactInfoEntry] = useInView({
     threshold: 0,
   });
+  const [contactBeenShown, setContactBeenShown] = useState(false);
+
+  useEffect(() => {
+    if (contactInfoInView && !contactBeenShown) {
+      setContactBeenShown(true);
+    }
+  }, [contactInfoInView]);
 
   const [form, setForm] = useState({
     name: "",
@@ -55,12 +80,12 @@ const Contact = () => {
         </div>
 
         <div
-          className="flex flex-col max-w-5xl mx-auto w-full"
+          className="flex flex-col flex-1 max-w-5xl mx-auto w-full"
           ref={contactInfoRef}
         >
           <div
             className={`flex flex-col relative mt-8 p-8 ${
-              !contactInfoInView && "hidden"
+              !contactBeenShown && "hidden"
             }`}
           >
             <div className="border-tl-right"></div>
@@ -70,7 +95,7 @@ const Contact = () => {
             <form
               onSubmit={sendEmail}
               autoComplete="off"
-              className="grid grid-rows-5 grid-cols-2 gap-4"
+              className="grid grid-rows-5 grid-cols-2 gap-4 fade-in-delay"
             >
               <input
                 type="text"
@@ -103,10 +128,31 @@ const Contact = () => {
                 onChange={handleMessageChange}
                 className="form-textarea col-span-2 row-span-3 self-start"
               />
-              <button type="submit" className="col-span-2 button type1">
-                Send
-              </button>
+              <div className="mt-4 col-span-2 flex justify-center">
+                <button type="submit" className="button type1 w-1/6">
+                  SEND
+                </button>
+              </div>
             </form>
+          </div>
+          <div className="mt-12 flex flex-col flex-1 items-center">
+            {/* <h2 className="text-3xl">Send me a message, or check these out</h2> */}
+            <div className="flex space-x-12 mt-6">
+              {profileLinks.map((link) => (
+                <a
+                  href={link.href}
+                  key={link.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={link.imgSrc}
+                    className="h-12 w-auto"
+                    alt={`logo of ${link.name}`}
+                  />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
