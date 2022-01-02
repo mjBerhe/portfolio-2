@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    <div className="border-t border-white p-4">
-      <h2 className="text-center">Created By Matthew Berhe.</h2>
+    <div className="bg-gray-400 p-4">
+      <h2 className="text-center text-gray-900 opacity-100">
+        Created By Matthew Berhe.
+      </h2>
     </div>
   );
 };

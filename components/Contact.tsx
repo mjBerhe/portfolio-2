@@ -3,6 +3,24 @@ import { useInView } from "react-intersection-observer";
 
 import emailjs from "emailjs-com";
 
+const profileLinks = [
+  {
+    name: "Resume",
+    imgSrc: "/logos/Resume_W.png",
+    href: "Resume 2021 v2.pdf",
+  },
+  {
+    name: "Github",
+    imgSrc: "/logos/Github_Logo_W.png",
+    href: "https://github.com/mjBerhe",
+  },
+  {
+    name: "Linkedin",
+    imgSrc: "/logos/Linkedin_Logo_W.png",
+    href: "https://www.linkedin.com/in/matthew-berhe-a632b017a/?originalSubdomain=ca",
+  },
+];
+
 const Contact = () => {
   const contactRef = useRef(null);
   const [contactInfoRef, contactInfoInView, contactInfoEntry] = useInView({
@@ -62,7 +80,7 @@ const Contact = () => {
         </div>
 
         <div
-          className="flex flex-col max-w-5xl mx-auto w-full"
+          className="flex flex-col flex-1 max-w-5xl mx-auto w-full"
           ref={contactInfoRef}
         >
           <div
@@ -116,6 +134,25 @@ const Contact = () => {
                 </button>
               </div>
             </form>
+          </div>
+          <div className="mt-12 flex flex-col flex-1 items-center">
+            {/* <h2 className="text-3xl">Send me a message, or check these out</h2> */}
+            <div className="flex space-x-12 mt-6">
+              {profileLinks.map((link) => (
+                <a
+                  href={link.href}
+                  key={link.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={link.imgSrc}
+                    className="h-12 w-auto"
+                    alt={`logo of ${link.name}`}
+                  />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

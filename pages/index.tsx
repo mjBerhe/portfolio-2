@@ -11,6 +11,21 @@ import Works from "../components/Works";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
+const profileLinks = [
+  {
+    name: "Resume",
+    imgSrc: "/logos/Resume_W.png",
+  },
+  {
+    name: "Github",
+    imgSrc: "/logos/Github_Logo_W.png",
+  },
+  {
+    name: "Linkedin",
+    imgSrc: "/logos/Linkedin_Logo_W.png",
+  },
+];
+
 const Home: NextPage = () => {
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
@@ -65,10 +80,24 @@ const Home: NextPage = () => {
           </ul>
 
           <div className="flex flex-1 flex-col items-start justify-center">
-            <h1 className="text-7xl font-bold slide-in">Matthew Berhe</h1>
-            <h2 className="text-2xl font-medium text-gray-400 slide-down">
-              Full Stack Developer
-            </h2>
+            <div className="flex">
+              {/* <div className="flex flex-col space-y-3">
+                {profileLinks.map((link) => (
+                  <img
+                    key={link.name}
+                    src={link.imgSrc}
+                    className="w-8 h-auto"
+                    alt=""
+                  />
+                ))}
+              </div> */}
+              <div className="flex flex-col">
+                <h1 className="main-title font-bold slide-in">Matthew Berhe</h1>
+                <h2 className="text-2xl font-medium text-gray-400 slide-down">
+                  Full Stack Developer
+                </h2>
+              </div>
+            </div>
           </div>
         </div>
 

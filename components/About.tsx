@@ -36,17 +36,17 @@ const About = () => {
             <div className="flex flex-col space-y-8 fade-in-delay">
               <p className="text-3xl font-medium">
                 Hey! I&apos;m Matthew, a self-taught developer based in Toronto.
-                I enjoy building websites that are easy to use yet provide a
-                large impact.
+                I love building websites that provide utility for the user,
+                while leaving them with an enjoyable experience.
               </p>
               <p className="text-3xl font-medium">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Suscipit culpa enim nam illo, cupiditate corporis quos eius
-                libero quo nobis cum perspiciatis molestias earum inventore
-                quasi illum, exercitationem dolorem expedita.
+                I&apos;m obsessed with both video games and efficiency, which is
+                how I was inspired to learn programming. Building tools to make
+                my life easier feels natural, and extending that to the world is
+                my goal.
               </p>
-              <p className="text-5xl font-medium italic text-center">
-                &quot;Insert Inspirational Quote Here&quot;
+              <p className="text-3xl italic text-center">
+                &quot;Inspirational Quote Here&quot;
               </p>
             </div>
           </div>
