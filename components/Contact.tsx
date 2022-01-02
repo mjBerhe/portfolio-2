@@ -8,6 +8,13 @@ const Contact = () => {
   const [contactInfoRef, contactInfoInView, contactInfoEntry] = useInView({
     threshold: 0,
   });
+  const [contactBeenShown, setContactBeenShown] = useState(false);
+
+  useEffect(() => {
+    if (contactInfoInView && !contactBeenShown) {
+      setContactBeenShown(true);
+    }
+  }, [contactInfoInView]);
 
   const [form, setForm] = useState({
     name: "",
@@ -60,7 +67,7 @@ const Contact = () => {
         >
           <div
             className={`flex flex-col relative mt-8 p-8 ${
-              !contactInfoInView && "hidden"
+              !contactBeenShown && "hidden"
             }`}
           >
             <div className="border-tl-right"></div>
@@ -70,7 +77,7 @@ const Contact = () => {
             <form
               onSubmit={sendEmail}
               autoComplete="off"
-              className="grid grid-rows-5 grid-cols-2 gap-4"
+              className="grid grid-rows-5 grid-cols-2 gap-4 fade-in-delay"
             >
               <input
                 type="text"
@@ -103,9 +110,11 @@ const Contact = () => {
                 onChange={handleMessageChange}
                 className="form-textarea col-span-2 row-span-3 self-start"
               />
-              <button type="submit" className="col-span-2 button type1">
-                Send
-              </button>
+              <div className="mt-4 col-span-2 flex justify-center">
+                <button type="submit" className="button type1 w-1/6">
+                  SEND
+                </button>
+              </div>
             </form>
           </div>
         </div>
