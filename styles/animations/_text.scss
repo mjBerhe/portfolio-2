@@ -12,6 +12,11 @@
   animation: slide-to-down 1s forwards 1s ease-in;
 }
 
+.slide-down-delay {
+  opacity: 0;
+  animation: slide-to-down 1s forwards 2s ease-in;
+}
+
 .fade-in {
   opacity: 0;
   animation: fade-in 2s forwards ease-in;
@@ -20,10 +25,6 @@
 .fade-in-delay {
   opacity: 0;
   animation: fade-in 2s forwards 1s ease-in;
-}
-
-.fade-out {
-  animation: fade-out 2s ease-out;
 }
 
 .text-underline {
@@ -83,14 +84,5 @@
   }
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }

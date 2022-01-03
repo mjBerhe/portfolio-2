@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import React, { useRef, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
 
 import Skills from "../components/Skills";
 
@@ -32,6 +31,25 @@ const Home: NextPage = () => {
   const worksRef = useRef(null);
   const contactRef = useRef(null);
 
+  const navLinks = [
+    {
+      name: "ABOUT",
+      ref: aboutRef,
+    },
+    {
+      name: "SKILLS",
+      ref: skillsRef,
+    },
+    {
+      name: "WORKS",
+      ref: worksRef,
+    },
+    {
+      name: "CONTACT",
+      ref: contactRef,
+    },
+  ];
+
   const scrollToRef = (ref: any) => {
     ref?.current?.scrollIntoView({ block: "start", behavior: "smooth" });
   };
@@ -44,40 +62,17 @@ const Home: NextPage = () => {
 
       <div className="max-w-7xl mx-auto min-h-screen flex flex-col">
         <div className="flex flex-col h-screen">
-          <ul className="flex justify-around mx-48 mt-4 text-3xl font-bold tracking-tight">
-            <li>
+          <nav className="flex justify-around mx-48 mt-4 text-3xl font-bold tracking-tight slide-down-delay">
+            {navLinks.map((navItem) => (
               <button
-                className="text-3xl font-bold tracking-tight"
-                onClick={() => scrollToRef(aboutRef)}
+                key={navItem.name}
+                className="nav-link text-3xl font-bold tracking-tight"
+                onClick={() => scrollToRef(navItem.ref)}
               >
-                ABOUT
+                {navItem.name}
               </button>
-            </li>
-            <li>
-              <button
-                className="text-3xl font-bold tracking-tight"
-                onClick={() => scrollToRef(skillsRef)}
-              >
-                SKILLS
-              </button>
-            </li>
-            <li>
-              <button
-                className="text-3xl font-bold tracking-tight"
-                onClick={() => scrollToRef(worksRef)}
-              >
-                WORKS
-              </button>
-            </li>
-            <li>
-              <button
-                className="text-3xl font-bold tracking-tight"
-                onClick={() => scrollToRef(contactRef)}
-              >
-                CONTACT
-              </button>
-            </li>
-          </ul>
+            ))}
+          </nav>
 
           <div className="flex flex-1 flex-col items-start justify-center">
             <div className="flex">

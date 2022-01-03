@@ -15,6 +15,31 @@
 //   padding: 1rem;
 // }
 
+.nav-link {
+  position: relative;
+  border: none;
+  outline: none;
+  @apply text-gray-200;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+  &:hover {
+    color: white;
+  }
+}
+
 .button {
   position: relative;
   padding: 0.75rem 2rem;
