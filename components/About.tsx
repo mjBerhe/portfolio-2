@@ -43,7 +43,7 @@ const About = () => {
               </p>
               <p className="text-xl sm:text-3xl font-medium">
                 I&apos;m obsessed with both video games and efficiency, which is
-                how I was inspired to learn programming. Building tools to make
+                why I was inspired to learn programming. Building tools to make
                 my life easier feels natural, and extending that to the world is
                 my goal.
               </p>
