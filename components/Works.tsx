@@ -92,9 +92,9 @@ const Works = () => {
     threshold: 0,
   });
 
-  const [works0Ref, works0InView, works0Entry] = useInView({ threshold: 1 });
-  const [works1Ref, works1InView, works1Entry] = useInView({ threshold: 1 });
-  const [works2Ref, works2InView, works2Entry] = useInView({ threshold: 1 });
+  const [works0Ref, works0InView, works0Entry] = useInView({ threshold: 0.8 });
+  const [works1Ref, works1InView, works1Entry] = useInView({ threshold: 0.8 });
+  const [works2Ref, works2InView, works2Entry] = useInView({ threshold: 0.8 });
 
   const [works0BeenShown, setWorks0BeenShown] = useState(false);
   const [works1BeenShown, setWorks1BeenShown] = useState(false);
@@ -158,7 +158,7 @@ const Works = () => {
                   <div
                     key={work.name}
                     ref={findRef(i)}
-                    className="flex flex-col relative p-8"
+                    className="flex flex-col relative p-6 sm:py-4 sm:px-6"
                   >
                     <div
                       key={work.name}
@@ -175,11 +175,17 @@ const Works = () => {
                       <img
                         src={work.websiteImg}
                         alt={`${work.name} screenshot`}
-                        className="rounded-xl shadow max-w-xl works-fade-in-delay w-full"
+                        className="rounded-xl shadow max-w-xl works-fade-in-delay w-full h-full self-center"
                       />
                       <div className="flex lg:p-4">
                         <div className="flex grow flex-col mb-4 works-slide-delay">
-                          <div className="flex justify-between">
+                          <div
+                            className={`flex justify-between ${
+                              (i + 1) % 2 === 0
+                                ? "flex-row-reverse"
+                                : "flex-row"
+                            }`}
+                          >
                             <div className="flex flex-col">
                               <p
                                 className={`text-3xl font-bold ${
@@ -248,16 +254,6 @@ const Works = () => {
                             </a>
                           </div>
                         </div>
-                        {/* <div className="lg:hidden flex items-start mr-4 mt-4 works-slide-delay">
-                          <a
-                            target="_blank"
-                            href={work.href}
-                            rel="noopener noreferrer"
-                            className="button type1"
-                          >
-                            VISIT
-                          </a>
-                        </div> */}
                       </div>
                     </div>
                   </div>
