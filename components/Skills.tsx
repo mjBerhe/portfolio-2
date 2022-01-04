@@ -115,9 +115,10 @@ const Skills = () => {
 
   const [swappingGroups, setSwappingGroups] = useState(false);
   const [selectedGroup, setSelectedGroup] = useState("front");
-  const selectedTextClass = "font-bold text-4xl";
+  const selectedTextClass =
+    "flex justify-center items-center font-bold text-3xl sm:text-4xl";
   const normalTextClass =
-    "font-normal opacity-50 text-4xl hover:font-bold hover:text-white hover:opacity-70";
+    "flex justify-center items-center font-normal opacity-50 text-3xl sm:text-4xl hover:font-bold hover:text-white hover:opacity-70";
 
   const handleChangeGroup = (groupName: string) => {
     setSelectedGroup(groupName);
@@ -135,15 +136,17 @@ const Skills = () => {
       <div className="flex flex-col flex-1 space-y-6">
         <div className="self-start relative mt-24 mx-12">
           <div className="text-overline"></div>
-          <h1 className="text-4xl font-bold text-left mt-4">SKILLS</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-left mt-4">
+            SKILLS
+          </h1>
         </div>
 
         <div
-          className="flex flex-col max-w-5xl mx-auto w-full"
+          className="flex flex-col max-w-5xl mx-auto w-full px-4"
           ref={skillsInfoRef}
         >
           <div
-            className={`flex flex-col relative mt-8 p-8 ${
+            className={`flex flex-col relative mt-8 p-6 sm:p-8 ${
               !skillsInfoBeenSeen && "hidden"
             }`}
           >
@@ -164,16 +167,48 @@ const Skills = () => {
                 }
                 onClick={() => handleChangeGroup("front")}
               >
-                Front-End &nbsp;&nbsp;/
+                Front-End
               </button>
+              <span
+                className={
+                  selectedGroup === "front"
+                    ? selectedTextClass
+                    : normalTextClass
+                }
+              >
+                &nbsp;&nbsp;/
+              </span>
+              <span
+                className={
+                  selectedGroup === "back" ? selectedTextClass : normalTextClass
+                }
+              >
+                /&nbsp;&nbsp;
+              </span>
               <button
                 className={
                   selectedGroup === "back" ? selectedTextClass : normalTextClass
                 }
                 onClick={() => handleChangeGroup("back")}
               >
-                /&nbsp;&nbsp;Back-End&nbsp;&nbsp;/
+                Back-End
               </button>
+              <span
+                className={
+                  selectedGroup === "back" ? selectedTextClass : normalTextClass
+                }
+              >
+                &nbsp;&nbsp;/
+              </span>
+              <span
+                className={
+                  selectedGroup === "other"
+                    ? selectedTextClass
+                    : normalTextClass
+                }
+              >
+                /&nbsp;&nbsp;
+              </span>
               <button
                 className={
                   selectedGroup === "other"
@@ -182,12 +217,12 @@ const Skills = () => {
                 }
                 onClick={() => handleChangeGroup("other")}
               >
-                /&nbsp;&nbsp;Other
+                Other
               </button>
             </div>
-            <div className="flex flex-col mb-12">
+            <div className="flex flex-col mb-8">
               {selectedGroup === "front" && (
-                <div className={`flex flex-wrap justify-center space-x-20`}>
+                <div className={`flex flex-wrap justify-around gap-12`}>
                   {frontEndPics.map((pic, i) => (
                     <div
                       key={pic.name}
@@ -213,7 +248,7 @@ const Skills = () => {
               )}
               {selectedGroup === "back" && (
                 <div
-                  className={`flex flex-wrap justify-center space-x-20 ${
+                  className={`flex flex-wrap justify-around gap-12 ${
                     skillsInfoInView ? "" : "hidden"
                   }`}
                 >
@@ -242,7 +277,7 @@ const Skills = () => {
               )}
               {selectedGroup === "other" && (
                 <div
-                  className={`flex flex-wrap justify-center space-x-20 ${
+                  className={`flex flex-wrap justify-around gap-12 ${
                     skillsInfoInView ? "" : "hidden"
                   }`}
                 >

@@ -1,6 +1,12 @@
 .main-title {
-  font-size: 5.3rem;
+  font-size: 3.5rem;
   line-height: 1;
+}
+
+@media (min-width: 640px) {
+  .main-title {
+    font-size: 5.3rem;
+  }
 }
 
 .slide-in {
