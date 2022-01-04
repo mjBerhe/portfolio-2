@@ -142,11 +142,13 @@ const Works = () => {
       <div className="flex flex-col flex-1 space-y-6">
         <div className="self-start relative mt-24 mx-12">
           <div className="text-overline"></div>
-          <h1 className="text-4xl font-bold text-left mt-4">WORKS</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-left mt-4">
+            WORKS
+          </h1>
         </div>
 
         <div
-          className="flex flex-col max-w-5xl mx-auto w-full"
+          className="flex flex-col max-w-2xl lg:max-w-5xl mx-auto w-full px-4"
           ref={worksInfoRef}
         >
           <div className="flex flex-col mt-8">
@@ -161,7 +163,9 @@ const Works = () => {
                     <div
                       key={work.name}
                       className={`flex ${
-                        (i + 1) % 2 === 0 ? "flex-row-reverse" : "flex-row"
+                        (i + 1) % 2 === 0
+                          ? "flex-col-reverse lg:flex-row-reverse"
+                          : "flex-col-reverse max-w-2xl mx-auto lg:flex-row lg:max-w-full"
                       } ${!worksBeenShown[i] && "hidden"}`}
                     >
                       <div className="border-tl-right"></div>
@@ -171,49 +175,80 @@ const Works = () => {
                       <img
                         src={work.websiteImg}
                         alt={`${work.name} screenshot`}
-                        className="rounded-xl shadow max-w-xl works-fade-in-delay"
+                        className="rounded-xl shadow max-w-xl works-fade-in-delay w-full"
                       />
-                      <div className="flex grow flex-col p-4 works-slide-delay">
-                        <p
-                          className={`text-3xl font-bold ${
-                            (i + 1) % 2 === 0 ? "text-right" : "text-left"
-                          }`}
-                        >
-                          {work.name}
-                        </p>
-                        <p
-                          className={`text-gray-400 text-xl font-normal ${
-                            (i + 1) % 2 === 0 ? "text-right" : "text-left"
-                          }`}
-                        >
-                          {work.type}
-                        </p>
-                        <div
-                          className={`flex flex-wrap mt-2 space-x-4 ${
-                            (i + 1) % 2 === 0 ? "justify-end" : "justify-start"
-                          }`}
-                        >
-                          {work?.technologies.map((tech, j) => (
-                            <img
-                              key={tech.name}
-                              src={tech.imgSrc}
-                              alt=""
-                              className="h-8 w-auto"
-                            />
-                          ))}
+                      <div className="flex lg:p-4">
+                        <div className="flex grow flex-col mb-4 works-slide-delay">
+                          <div className="flex justify-between">
+                            <div className="flex flex-col">
+                              <p
+                                className={`text-3xl font-bold ${
+                                  (i + 1) % 2 === 0 ? "text-right" : "text-left"
+                                }`}
+                              >
+                                {work.name}
+                              </p>
+                              <p
+                                className={`text-gray-400 text-xl font-normal ${
+                                  (i + 1) % 2 === 0 ? "text-right" : "text-left"
+                                }`}
+                              >
+                                {work.type}
+                              </p>
+                            </div>
+                            <div className="lg:hidden flex items-start mr-4 mt-4 works-slide-delay">
+                              <a
+                                target="_blank"
+                                href={work.href}
+                                rel="noopener noreferrer"
+                                className="button type1"
+                              >
+                                VISIT
+                              </a>
+                            </div>
+                          </div>
+
+                          <div
+                            className={`flex flex-wrap mt-2 space-x-4 ${
+                              (i + 1) % 2 === 0
+                                ? "justify-end"
+                                : "justify-start"
+                            }`}
+                          >
+                            {work?.technologies.map((tech, j) => (
+                              <img
+                                key={tech.name}
+                                src={tech.imgSrc}
+                                alt=""
+                                className="h-8 w-auto"
+                              />
+                            ))}
+                          </div>
+                          <span
+                            className={`text-xl mt-4 ${
+                              (i + 1) % 2 === 0 ? "text-right" : "text-left"
+                            }`}
+                          >
+                            {work.description}
+                          </span>
+                          <div
+                            className={`hidden lg:flex mt-4 ${
+                              (i + 1) % 2 === 0
+                                ? "justify-end"
+                                : "justify-start"
+                            }`}
+                          >
+                            <a
+                              target="_blank"
+                              href={work.href}
+                              rel="noopener noreferrer"
+                              className="button type1"
+                            >
+                              VISIT
+                            </a>
+                          </div>
                         </div>
-                        <span
-                          className={`text-xl mt-4 ${
-                            (i + 1) % 2 === 0 ? "text-right" : "text-left"
-                          }`}
-                        >
-                          {work.description}
-                        </span>
-                        <div
-                          className={`flex mt-4 ${
-                            (i + 1) % 2 === 0 ? "justify-end" : "justify-start"
-                          }`}
-                        >
+                        {/* <div className="lg:hidden flex items-start mr-4 mt-4 works-slide-delay">
                           <a
                             target="_blank"
                             href={work.href}
@@ -222,7 +257,7 @@ const Works = () => {
                           >
                             VISIT
                           </a>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
