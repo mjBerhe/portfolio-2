@@ -40,6 +40,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [hasSubmit, setHasSubmit] = useState(false);
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formType = e.currentTarget.name;
@@ -62,13 +63,14 @@ const Contact = () => {
     e.preventDefault();
     console.log(form);
 
-    // const result = await emailjs.sendForm(
-    //   "service_3cdiee4",
-    //   "template_57c2yfl",
-    //   e.target,
-    //   "user_HeqlqbuQa4Ip0GvzY2pRO"
-    // );
-    // console.log(result);
+    const result = await emailjs.sendForm(
+      "service_3cdiee4",
+      "template_57c2yfl",
+      e.target,
+      "user_HeqlqbuQa4Ip0GvzY2pRO"
+    );
+    console.log(result);
+    setHasSubmit(true);
   };
 
   return (
@@ -131,7 +133,11 @@ const Contact = () => {
                 className="form-textarea col-span-2 row-span-3 self-start"
               />
               <div className="mt-4 col-span-2 flex justify-center items-center">
-                <button type="submit" className="button type1 w-1/2 sm:w-36">
+                <button
+                  type="submit"
+                  disabled={hasSubmit}
+                  className="button type1 w-1/2 sm:w-36"
+                >
                   SEND
                 </button>
               </div>
@@ -146,6 +152,7 @@ const Contact = () => {
                   key={link.name}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="contact-link"
                 >
                   <img
                     src={link.imgSrc}

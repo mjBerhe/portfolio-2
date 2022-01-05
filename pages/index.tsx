@@ -62,7 +62,7 @@ const Home: NextPage = () => {
 
       <div className="max-w-7xl mx-auto min-h-screen flex flex-col">
         <div className="flex flex-col h-screen">
-          <nav className="flex justify-around mx-48 mt-4 text-3xl font-bold tracking-tight slide-down-delay">
+          <nav className="hidden sm:flex justify-around mx-6 sm:mx-12 md:mx-24 lg:mx-48 mt-4 text-3xl font-bold tracking-tight slide-down-delay">
             {navLinks.map((navItem) => (
               <button
                 key={navItem.name}

@@ -1,3 +1,18 @@
+.contact-link {
+  span {
+    opacity: 1;
+    color: white;
+    transition: all 50ms ease-in;
+  }
+  &:hover {
+    transform: scale(1.1);
+    transition: all 50ms ease-in;
+    span {
+      opacity: 1;
+    }
+  }
+}
+
 .tech-item {
   height: 5rem;
   width: auto;
@@ -12,22 +27,22 @@
     height: 5rem;
     transition: all 50ms ease-in;
   }
-}
 
-.tech-item:hover {
-  > img {
-    opacity: 0;
-    transition: all 50ms ease-in;
-  }
-  a > img {
-    opacity: 1;
-    transform: scale(1.1);
-    transition: all 50ms ease-in;
-  }
-  a > span {
-    opacity: 1;
-    transform: scale(1.1);
-    transition: all 50ms ease-in;
+  &:hover {
+    > img {
+      opacity: 0;
+      transition: all 50ms ease-in;
+    }
+    a > img {
+      opacity: 1;
+      transform: scale(1.1);
+      transition: all 50ms ease-in;
+    }
+    a > span {
+      opacity: 1;
+      transform: scale(1.1);
+      transition: all 50ms ease-in;
+    }
   }
 }
 
