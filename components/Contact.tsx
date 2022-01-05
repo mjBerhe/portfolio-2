@@ -40,6 +40,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [hasSubmit, setHasSubmit] = useState(false);
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formType = e.currentTarget.name;
@@ -58,17 +59,18 @@ const Contact = () => {
     }));
   };
 
-  const sendEmail = async (e: React.FormEvent) => {
+  const sendEmail = async (e: any) => {
     e.preventDefault();
     console.log(form);
 
-    // const result = await emailjs.sendForm(
-    //   "service_3cdiee4",
-    //   "template_57c2yfl",
-    //   e.target,
-    //   "user_HeqlqbuQa4Ip0GvzY2pRO"
-    // );
-    // console.log(result);
+    const result = await emailjs.sendForm(
+      "service_3cdiee4",
+      "template_57c2yfl",
+      e.target,
+      "user_HeqlqbuQa4Ip0GvzY2pRO"
+    );
+    console.log(result);
+    setHasSubmit(true);
   };
 
   return (
@@ -76,11 +78,13 @@ const Contact = () => {
       <div className="flex flex-col flex-1 space-y-6">
         <div className="self-start relative mt-24 mx-12">
           <div className="text-overline"></div>
-          <h1 className="text-4xl font-bold text-left mt-4">CONTACT ME</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-left mt-4">
+            CONTACT ME
+          </h1>
         </div>
 
         <div
-          className="flex flex-col flex-1 max-w-5xl mx-auto w-full"
+          className="flex flex-col flex-1 max-w-5xl mx-auto w-full px-4"
           ref={contactInfoRef}
         >
           <div
@@ -103,7 +107,7 @@ const Contact = () => {
                 placeholder="Name"
                 value={form.name}
                 onChange={handleFormChange}
-                className="form-input col-span-1"
+                className="form-input col-span-2 sm:col-span-1"
               />
               <input
                 type="text"
@@ -111,7 +115,7 @@ const Contact = () => {
                 placeholder="Email"
                 value={form.email}
                 onChange={handleFormChange}
-                className="form-input col-span-1"
+                className="form-input col-span-2 sm:col-span-1"
               />
               <input
                 type="text"
@@ -128,8 +132,12 @@ const Contact = () => {
                 onChange={handleMessageChange}
                 className="form-textarea col-span-2 row-span-3 self-start"
               />
-              <div className="mt-4 col-span-2 flex justify-center">
-                <button type="submit" className="button type1 w-1/6">
+              <div className="mt-4 col-span-2 flex justify-center items-center">
+                <button
+                  type="submit"
+                  disabled={hasSubmit}
+                  className="button type1 w-1/2 sm:w-36"
+                >
                   SEND
                 </button>
               </div>
@@ -144,6 +152,7 @@ const Contact = () => {
                   key={link.name}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="contact-link"
                 >
                   <img
                     src={link.imgSrc}
