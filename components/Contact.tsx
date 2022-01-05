@@ -59,7 +59,7 @@ const Contact = () => {
     }));
   };
 
-  const sendEmail = async (e: React.FormEvent) => {
+  const sendEmail = async (e: any) => {
     e.preventDefault();
     console.log(form);
 
