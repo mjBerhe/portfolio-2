@@ -116,9 +116,9 @@ const Skills = () => {
   const [swappingGroups, setSwappingGroups] = useState(false);
   const [selectedGroup, setSelectedGroup] = useState("front");
   const selectedTextClass =
-    "flex justify-center items-center font-bold text-3xl sm:text-4xl";
+    "flex justify-center items-center font-bold text-xl sm:text-2xl";
   const normalTextClass =
-    "flex justify-center items-center font-normal opacity-50 text-3xl sm:text-4xl hover:font-bold hover:text-white hover:opacity-70";
+    "flex justify-center items-center font-normal opacity-50 text-xl sm:text-2xl hover:font-bold hover:text-white hover:opacity-70";
 
   const handleChangeGroup = (groupName: string) => {
     setSelectedGroup(groupName);
@@ -136,7 +136,7 @@ const Skills = () => {
       <div className="flex flex-col flex-1 space-y-6">
         <div className="self-start relative mt-24 mx-12">
           <div className="text-overline"></div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-left mt-4">
+          <h1 className="text-xl sm:text-2xl font-bold text-left mt-4">
             SKILLS
           </h1>
         </div>

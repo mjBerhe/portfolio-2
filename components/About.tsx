@@ -17,7 +17,7 @@ const About = () => {
       <div className="flex flex-col flex-1 space-y-6">
         <div className="self-start relative mt-24 mx-12">
           <div className="text-overline"></div>
-          <h1 className="text-3xl sm:text-2xl font-bold text-left mt-4">
+          <h1 className="text-xl sm:text-2xl font-bold text-left mt-4">
             ABOUT ME
           </h1>
         </div>
@@ -47,7 +47,7 @@ const About = () => {
                 my life easier feels natural, and extending that to the world is
                 my goal.
               </p>
-              <p className="text-2xl sm:text-3xl italic text-center">
+              <p className="text-xl sm:text-2xl italic text-center">
                 &quot;Inspirational Quote Here&quot;
               </p>
             </div>

@@ -73,7 +73,7 @@ const Home: NextPage = () => {
               {navLinks.map((navItem) => (
                 <button
                   key={navItem.name}
-                  className="nav-link text-3xl font-bold tracking-tight"
+                  className="nav-link text-xl font-bold tracking-tight"
                   onClick={() => scrollToRef(navItem.ref)}
                 >
                   {navItem.name}
