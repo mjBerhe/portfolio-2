@@ -94,7 +94,7 @@ const Home: NextPage = () => {
                 ))}
               </div> */}
                 <div className="flex flex-col px-4">
-                  <h1 className="main-title font-bold slide-in">
+                  <h1 className="text-5xl sm:text-7xl font-bold slide-in">
                     Matthew Berhe
                   </h1>
                   <h2 className="text-2xl font-medium text-gray-400 slide-down">
