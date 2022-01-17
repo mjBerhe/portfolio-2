@@ -39,6 +39,11 @@
   animation: slide-to-right 0.25s forwards 1.5s ease-in;
 }
 
+.slide-in-7 {
+  opacity: 0;
+  animation: slide-to-right 0.25s forwards 1.75s ease-in;
+}
+
 // delays
 .slide-in-1-delay {
   opacity: 0;
@@ -68,4 +73,9 @@
 .slide-in-6-delay {
   opacity: 0;
   animation: slide-to-right 0.25s forwards 2.75s ease-in;
+}
+
+.slide-in-7-delay {
+  opacity: 0;
+  animation: slide-to-right 0.25s forwards 3s ease-in;
 }

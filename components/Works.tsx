@@ -38,6 +38,40 @@ const worksList = [
     ],
   },
   {
+    name: "Fraction",
+    type: "Personal Project",
+    websiteImg: "screenshots/fraction.png",
+    href: "https://fraction-rho.vercel.app/",
+    description:
+      "Test how accurate and fast you are at recognizing different fractions. See how well you match up against others.",
+    technologies: [
+      {
+        name: "React",
+        imgSrc: "/logos/ReactJS_Logo.png",
+      },
+      {
+        name: "Typescript",
+        imgSrc: "/logos/Typescript_Logo.png",
+      },
+      {
+        name: "NextJS",
+        imgSrc: "/logos/NextJS_Logo_W.png",
+      },
+      {
+        name: "Tailwind",
+        imgSrc: "/logos/Tailwind_Logo.png",
+      },
+      {
+        name: "PlanetScale",
+        imgSrc: "/logos/Planetscale_Logo_W.png",
+      },
+      {
+        name: "Prisma",
+        imgSrc: "/logos/Prisma_Logo.png",
+      },
+    ],
+  },
+  {
     name: "DPS Calculator",
     type: "Personal Project",
     websiteImg: "screenshots/osrsdps.png",
@@ -63,28 +97,28 @@ const worksList = [
       },
     ],
   },
-  {
-    name: "2Slow",
-    type: "Personal Project",
-    websiteImg: "screenshots/tooslow.png",
-    href: "https://tooslow.herokuapp.com/",
-    description:
-      "Fast-paced competitive math game where speed and accuracy decide the victor.",
-    technologies: [
-      {
-        name: "React",
-        imgSrc: "/logos/ReactJS_Logo.png",
-      },
-      {
-        name: "NodeJS",
-        imgSrc: "/logos/NodeJS_Logo.png",
-      },
-      {
-        name: "SocketIO",
-        imgSrc: "/logos/SocketIO_Logo.png",
-      },
-    ],
-  },
+  // {
+  //   name: "2Slow",
+  //   type: "Personal Project",
+  //   websiteImg: "screenshots/tooslow.png",
+  //   href: "https://tooslow.herokuapp.com/",
+  //   description:
+  //     "Fast-paced competitive math game where speed and accuracy decide the victor.",
+  //   technologies: [
+  //     {
+  //       name: "React",
+  //       imgSrc: "/logos/ReactJS_Logo.png",
+  //     },
+  //     {
+  //       name: "NodeJS",
+  //       imgSrc: "/logos/NodeJS_Logo.png",
+  //     },
+  //     {
+  //       name: "SocketIO",
+  //       imgSrc: "/logos/SocketIO_Logo.png",
+  //     },
+  //   ],
+  // },
 ];
 
 const Works = () => {
@@ -164,7 +198,7 @@ const Works = () => {
                       key={work.name}
                       className={`flex ${
                         (i + 1) % 2 === 0
-                          ? "flex-col-reverse lg:flex-row-reverse"
+                          ? "flex-col-reverse max-w-2xl mx-auto lg:flex-row-reverse lg:max-w-full"
                           : "flex-col-reverse max-w-2xl mx-auto lg:flex-row lg:max-w-full"
                       } ${!worksBeenShown[i] && "hidden"}`}
                     >

@@ -9,6 +9,12 @@ const frontEndPics = [
     whiteImgSrc: "ReactJS_Logo_W.png",
   },
   {
+    name: "Typescript",
+    href: "https://www.typescriptlang.org/",
+    colorImgSrc: "Typescript_Logo.png",
+    whiteImgSrc: "Typescript_Logo_W.png",
+  },
+  {
     name: "Javscript",
     href: "https://www.javascript.com/",
     colorImgSrc: "JS_Logo.png",
@@ -48,6 +54,18 @@ const backEndPics = [
     whiteImgSrc: "NodeJS_Logo_W.png",
   },
   {
+    name: "Prisma",
+    href: "https://www.prisma.io/",
+    colorImgSrc: "Prisma_Logo.png",
+    whiteImgSrc: "Prisma_Logo_W.png",
+  },
+  {
+    name: "PlanetScale",
+    href: "https://planetscale.com/",
+    colorImgSrc: "Planetscale_Logo_W.png",
+    whiteImgSrc: "Planetscale_Logo_W.png",
+  },
+  {
     name: "Firebase",
     href: "https://firebase.google.com/",
     colorImgSrc: "Firebase_Logo.png",
@@ -68,7 +86,7 @@ const backEndPics = [
   {
     name: "Socket.IO",
     href: "https://socket.io/",
-    colorImgSrc: "SocketIO_Logo.png",
+    colorImgSrc: "SocketIO_Logo_W.png",
     whiteImgSrc: "SocketIO_Logo_W.png",
   },
 ];
@@ -77,14 +95,20 @@ const otherTechPics = [
   {
     name: "NextJS",
     href: "https://nextjs.org/",
-    colorImgSrc: "NextJS_Logo.png",
+    colorImgSrc: "NextJS_Logo_W.png",
     whiteImgSrc: "NextJS_Logo_W.png",
   },
   {
     name: "Vercel",
     href: "https://vercel.com/",
-    colorImgSrc: "Vercel_Logo.png",
+    colorImgSrc: "Vercel_Logo_W.png",
     whiteImgSrc: "Vercel_Logo_W.png",
+  },
+  {
+    name: "Git",
+    href: "https://git-scm.com/",
+    colorImgSrc: "Git_Logo.png",
+    whiteImgSrc: "Git_Logo_W.png",
   },
   {
     name: "Github",
