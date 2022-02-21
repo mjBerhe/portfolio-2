@@ -7,7 +7,7 @@ const profileLinks = [
   {
     name: "Resume",
     imgSrc: "/logos/Resume_W.png",
-    href: "Resume 2021 v2.pdf",
+    href: "Resume 2022.pdf",
   },
   {
     name: "Github",
